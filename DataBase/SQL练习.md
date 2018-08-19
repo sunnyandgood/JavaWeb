@@ -77,11 +77,17 @@
 
 * 1、 查询student表中的所有记录的s_name s_sex和s_class列。
 
-
+	  select s_name,s_sex,s_class from student;
 
 * 2、 查询教师所有的单位即不重复的depart列。
 
-
+	  select depart from teacher group by depart;
+	  select distinct depart from teacher;
+	  
+	 ------------------------------ 
+	  
+	  select depart from teacher group by depart having depart='计算机系';
+	  select distinct(depart) from teacher where depart='计算机系';
 
 * 3、 查询student表的所有记录。
 
