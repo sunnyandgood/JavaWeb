@@ -2,6 +2,33 @@
 
 * 注：所有操作都必须在英文状态下
 
+* 建表
+
+      -- ----------------------------
+      -- Table structure for wanjia
+      -- ----------------------------
+      CREATE TABLE `wanjia` (
+        `w_id` varchar(50) NOT NULL,
+        `w_name` varchar(100) default NULL,
+        `w_sex` varchar(50) default NULL,
+        `w_like` varchar(50) default NULL,
+        PRIMARY KEY  (`w_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+      -- ----------------------------
+      -- Table structure for yingxiong
+      -- ----------------------------
+      CREATE TABLE `yingxiong` (
+        `p_id` varchar(50) NOT NULL,
+        `P_name` varchar(100) default NULL,
+        `p_sex` varchar(50) default NULL,
+        `p_age` int(11) default NULL,
+        `p_weizhi` varchar(100) default NULL,
+        `p_leader` varchar(50) default NULL,
+        `w_id` varchar(50) default NULL,
+        PRIMARY KEY  (`p_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 ### 一、查询
 
 * 1、全查
