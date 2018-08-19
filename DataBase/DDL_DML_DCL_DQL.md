@@ -1,4 +1,4 @@
-# DDl、DML、DCL、DQL
+# DDL、DML、DCL、DQL
 
 * DDL 数据库模式定义语言 create
 
