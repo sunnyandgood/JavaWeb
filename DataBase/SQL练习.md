@@ -104,43 +104,49 @@
 
 * 3、 查询student表的所有记录。
 
-
+	  select * from student;
 
 * 4、 查询score表中成绩在60到80之间的所有记录。
 
-
+	  select * from score where degree between 60 and 80;
+	  select * from score where degree >= 60 and degree <= 80;
 
 * 5、 查询score表中成绩为85，86或88的记录。
 
-
+	  select * from score where degree in (85,86,88);
+	  select * from score where degree = 85 or degree = 86 or degree = 88;
 
 * 6、 查询student表中“95031”班或性别为“女”的同学记录。
 
-
+	  select * from student where s_sex = '女' or s_class = '95031';
 
 * 7、 以s_class降序查询student表的所有记录。
 
-
+	  select * from student order by s_class desc;
 
 * 8、 以c_id升序、degree降序查询score表的所有记录。
 
-
+	  select * from score order by c_id asc;
+	  
+	  select * from score order by degree desc;
 
 * 9、 查询“95031”班的学生人数。
 
-
+	  select count(*) from student where s_class = '95031';
+	  select sum(s_class = '95031') from student;
 
 * 10、查询score表中的最高分的学生学号和课程号。
 
-
+	  select s_id,c_id from score where degree = (select max(degree) from score);
 
 * 11、查询‘3-105’号课程的平均分。
 
-
+	  select avg(degree) from score where c_id = '3-105';
 
 * 12、查询score表中至少有5名学生选修的并以3开头的课程的平均分数。
 
-
+	  select avg(degree) from score where c_id like '3%' group by c_id having count(c_id) > 4;
+	  select avg(degree) from score group by c_id having count(c_id)>=5 and c_id like '3%';
 
 * 13、查询最低分大于70，最高分小于90的s_id列。
 
