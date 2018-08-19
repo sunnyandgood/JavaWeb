@@ -12,6 +12,8 @@
 
 * 数据定义语言，用于定义和管理 SQL 数据库中的所有对象的语言。 
 
+* DDL主要是用在定义或改变表（TABLE）的结构，数据类型，表之间的链接和约束等初始化工作上，他们大多在建立表时使用。
+
     * 1、CREATE - to create objects in the database   创建 
 
     * 2、ALTER - alters the structure of the database   修改 
@@ -34,6 +36,8 @@
 
 * 数据操作语言，SQL中处理数据等操作统称为数据操纵语言 
 
+* 它们是SELECT、UPDATE、INSERT、DELETE，就象它的名字一样，这4条命令是用来对数据库里的数据进行操作的语言。
+
     * 1、SELECT - retrieve data from the a database   查询 
 
     * 2、INSERT - insert data into a table  添加 
@@ -52,7 +56,9 @@
 
 ### 三、DCL（Data Control Language）数据库控制语言：
 
-* 数据控制语言，用来授予或回收访问数据库的某种特权，并控制数据库操纵事务发生的时间及效果，对数据库实行监视等 
+* 数据控制语言，用来授予或回收访问数据库的某种特权，并控制数据库操纵事务发生的时间及效果，对数据库实行监视等。
+
+* 是数据库控制功能。是用来设置或更改数据库用户或角色权限的语句，包括（grant,deny,revoke等）语句。在默认状态下，只有 sysadmin,dbcreator,db_owner或db_securityadmin等人员才有权力执行DCL 
 
     * 1、COMMIT - save work done 提交 
 
