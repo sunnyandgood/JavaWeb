@@ -82,7 +82,7 @@
 * 2、 查询教师所有的单位即不重复的depart列。
 
 	  select depart from teacher group by depart;
-	  select distinct depart from teacher;
+	  select distinct depart from teacher;  //( distinct 与 group by depart 有什么区别)
 	  
 	 ------------------------------ 
 	  
