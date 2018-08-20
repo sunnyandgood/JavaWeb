@@ -109,7 +109,7 @@
 * 4、 查询score表中成绩在60到80之间的所有记录。
 
 	  select * from score where degree between 60 and 80;
-	  select * from score where degree >= 60 and degree <= 80;
+	  select * from score where degree > 60 and degree < 80;
 
 * 5、 查询score表中成绩为85，86或88的记录。
 
@@ -150,19 +150,21 @@
 
 * 13、查询最低分大于70，最高分小于90的s_id列。
 
-
+	  select s_id from score where degree > 70 and degree < 90;
+	  select s_id from score where degree between 70 and 90;
 
 * 14、查询所有学生的s_name、c_id和degree列。
 
-
+	  select s_name,c_id,degree from student stu,score sco where stu.s_id = sco.s_id;
 
 * 15、查询所有学生的s_id、c_name和degree列。
 
-
+	  select s_id,c_name,degree from score sco,coures cou where sco.c_id = cou.c_id;
 
 * 16、查询所有学生的s_name、c_name和degree列。
 
-
+	  select s_name,c_name,degree from student,coures,score where 
+	  			student.s_id = score.s_id and score.c_id = coures.c_id;
 
 * 17、查询“95033”班所选课程的平均分。
 
