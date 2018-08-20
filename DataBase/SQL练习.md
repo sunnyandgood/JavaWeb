@@ -171,6 +171,8 @@
 * 17、查询“95033”班所选课程的平均分。
 
 	  select avg(degree) from score where s_id in (select s_id from student where s_class = '95033');
+	  select avg(degree) from student,score  where student.s_id=score.s_id 
+	  						group by s_class having s_class='95033'
 
 * 18、假设使用如下命令建立了一个grade表：
 
