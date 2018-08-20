@@ -165,6 +165,8 @@
 
 	  select s_name,c_name,degree from student,coures,score where 
 	  			student.s_id = score.s_id and score.c_id = coures.c_id;
+	  select s_name,c_name,degree from student join score on student.s_id = score.s_id 
+	  					join coures on score.c_id = coures.c_id;			
 
 * 17、查询“95033”班所选课程的平均分。
 
