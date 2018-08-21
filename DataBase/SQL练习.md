@@ -166,7 +166,7 @@
 	  select s_name,c_name,degree from student,coures,score where 
 	  			student.s_id = score.s_id and score.c_id = coures.c_id;
 	  select s_name,c_name,degree from student join score on student.s_id = score.s_id 
-	  					join coures on score.c_id = coures.c_id;			
+	  					join coures on score.c_id = coures.c_id;
 
 * 17、查询“95033”班所选课程的平均分。
 
@@ -286,39 +286,60 @@
 
 * 34、查询所有任课教师的t_name和Depart.
 
-
+	  select t_name,depart from teacher where t_id in ( select t_id from coures where c_id in 
+	  								(select c_id from score));
 
 * 35  查询所有未讲课的教师的t_name和Depart. 
 
-
+	  select t_name,depart from teacher where t_id not in ( select t_id from coures 
+	  					where c_id in (select c_id from score));
+						
+	  select t_name,depart from teacher where t_name in (select t_name from teacher,coures,score 
+	  		where teacher.t_id=coures.t_id and coures.c_id=score.c_id group by t_name);		
 
 * 36、查询至少有2名男生的班号。
 	
-
+	  select s_class from student where s_sex = '男' group by s_class having count(*) >= 2;
+	  select s_class from student group by s_class having count(s_sex='男') >= 2;
 
 * 37、查询Student表中不姓“王”的同学记录。
 
+	  select * from student where s_name not like '王%';
 
+### 38、查询Student表中每个学生的姓名和年龄。
 
-* 38、查询Student表中每个学生的姓名和年龄。
-
-
+	  select s_name,year(now()) - YEAR(s_birthday) as age from Student ;
+	  select s_name,extract(year from now()) - (date_format(s_birthday,'%Y')) as age from student;
 
 * 39、查询Student表中最大和最小的s_birthday日期值。
 
-
-
+	  select max(s_birthday)as minage,min(s_birthday) as maxage from student;
+	  
+	  select (select s_birthday from student order by (date_format(s_birthday,'%Y')) asc,
+	    (date_format(s_birthday,'%m')) asc,(date_format(s_birthday,'%d')) asc limit 0,1 ) as 'maxage',
+	    (select s_birthday from student order by (date_format(s_birthday,'%Y')) desc,
+	    (date_format(s_birthday,'%m')) desc,(date_format(s_birthday,'%d')) desc limit 0,1 ); 
+	    as 'minage' from student limit 0,1
+	  
 * 40、以班号和年龄从大到小的顺序查询Student表中的全部记录。
 
-
+	  select  *  from student  order by s_class desc,s_birthday asc;
+	  
+	  select * from student order by s_class desc,(date_format(s_birthday,'%Y'))asc,
+	              (date_format(s_birthday,'%m'))asc,(date_format(s_birthday,'%d'))asc;
 
 * 41、查询“男”教师及其所上的课程。
 
+	  select t_name,c_name from teacher,coures where teacher.t_id =coures.t_id and teacher.t_sex = '男';
+	  select t_name,c_name from (select * from teacher where t_sex = '男') as nan 
+	  							left join coures on nan.t_id=coures.t_id;
+	  select c_name,t_name from coures join teacher on coures.t_id = teacher.t_id where t_sex='男' ;
+	  select c_name,t_name from coures where t_id in(select t_id from teacher where t_sex='男');
 
 
 * 42、查询最高分同学的s_id、c_id和Degree列。
 
-
+	  
 
 * 43、查询和“李军”同性别的所有同学的s_name.
 
