@@ -257,7 +257,11 @@
 
 * 29、查询选修编号为“3-105“课程且成绩至少高于选修编号为“3-245”的同学的c_id、s_id和Degree,并按Degree从高到低次序排序。
 
-	  
+	  select c_id,s_id,degree from score where c_id = '3-105' and degree > 
+	          (select min(degree) from score where c_id = '3-245') order by degree desc;
+
+	  select * from (select c_id,s_id,degree from score where c_id='3-105' and 
+	      degree > (select min(degree) from score where c_id='3-245') )as xin order by degree desc;
 
 * 30、查询选修编号为“3-105”且成绩高于选修编号为“3-245”课程的同学的c_id、s_id和Degree.
 
