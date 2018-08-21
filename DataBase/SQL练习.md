@@ -235,15 +235,16 @@
 
 * 25、查询95033班和95031班全体学生的记录。
 	
-
+	  select * from student,score,coures,teacher where student.s_class in ('95033','95031') 
+	    and student.s_id = score.s_id and score.c_id = coures.c_id and coures.t_id = teacher.t_id;
 
 * 26、查询存在有85分以上成绩的课程c_id.
 
-
+	  select c_id from score where degree > 85;
 
 * 27、查询出“计算机系“教师所教课程的成绩表。
 	
-
+	  
 
 * 28、查询“计算机系”与“电子工程系“不同职称的教师的Tname和Prof。
 	
