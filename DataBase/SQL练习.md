@@ -228,7 +228,10 @@
 * 24、查询选修某课程的同学人数多于5人的教师姓名。
 	
 	  select t_name from teacher,coures,score where teacher.t_id=coures.t_id and 
-	  	 coures.c_id=score.c_id group by score.c_id having count(score.c_id)>5
+	  	 coures.c_id=score.c_id group by score.c_id having count(score.c_id)>5;
+		 
+	  select t_name from teacher where t_id in (select t_id from coures where c_id in 
+	  		  (select c_id from score group by c_id having count(c_id) > 5));		 
 
 * 25、查询95033班和95031班全体学生的记录。
 	
