@@ -244,15 +244,20 @@
 
 * 27、查询出“计算机系“教师所教课程的成绩表。
 	
-	  
+	  select student.s_name,score.degree from coures,student,score,teacher 
+	  	where  teacher.depart = '计算机系' and coures.c_id = score.c_id 
+		and score.s_id = student.s_id and coures.t_id = teacher.t_id;
 
-* 28、查询“计算机系”与“电子工程系“不同职称的教师的Tname和Prof。
+* 28、查询“计算机系”与“电子工程系“不同职称的教师的t_name和prof。
 	
+	  select t_name,prof from teacher where teacher.depart in ('计算机系','电子工程系')
 
+	  select t_name,prof from teacher where (depart='计算机系' or depart='电子工程系') 
+	  				and (prof in(select prof from teacher group by prof))
 
 * 29、查询选修编号为“3-105“课程且成绩至少高于选修编号为“3-245”的同学的c_id、s_id和Degree,并按Degree从高到低次序排序。
 
-
+	  
 
 * 30、查询选修编号为“3-105”且成绩高于选修编号为“3-245”课程的同学的c_id、s_id和Degree.
 
