@@ -339,22 +339,32 @@
 
 * 42、查询最高分同学的s_id、c_id和Degree列。
 
-	  
+	  select s_id,c_id,degree from score where degree = (select max(degree) from score);
 
 * 43、查询和“李军”同性别的所有同学的s_name.
 
-
+	  select s_name from student where s_sex = (select s_sex from student where s_name = '李军');
+	  
+	  select s_name from student where s_sex = (select s_sex from student where s_name = '李军') 
+	  								and s_name <> '李军';
 
 * 44、查询和“李军”同性别并同班的同学s_name.
 
-
-
+	  select s_name from student where s_sex = (select s_sex from student where s_name = '李军') 
+	      and s_class = (select s_class from student where s_name = '李军') and s_name <> '李军';
+	  
+	  select s_name from student s1 where s_sex=(select s_sex from student s2 where s_name='李军' 
+	  					and s1.s_class= s2.s_class) and s_name <> '李军';
+	  
 * 45、查询所有选修“计算机导论”课程的“男”同学的成绩表
 
+	  select * from score where c_id = (select c_id from coures where c_name = '计算机导论') 
+	  				and s_id in (select s_id from student where s_sex = '男');
 
-
-
-
+	  select s_name,degree from coures,score,student where coures.c_id = score.c_id and 
+	  	          score.s_id = student.s_id and c_name='计算机导论' and s_sex='男'
+			  
+	  
 
 
 
