@@ -265,18 +265,24 @@
 
 * 30、查询选修编号为“3-105”且成绩高于选修编号为“3-245”课程的同学的c_id、s_id和Degree.
 
-
+	  select c_id,s_id,degree from score where c_id = '3-105' and degree > 
+	  			(select max(degree) from score where c_id = '3-245');
 
 * 31、查询所有教师和同学的name、sex和birthday.
 
+	  select t_name,t_sex,t_birthday,s_name,s_sex,s_birthday from teacher,coures,score,student 
+	         where teacher.t_id=coures.t_id and coures.c_id=score.c_id and score.s_id=student.s_id;
 
 
 * 32、查询所有“女”教师和“女”同学的name、sex和birthday.
 
+	  select t_name,t_sex,t_birthday from teacher where t_sex='女';
+	  select s_name,s_sex,s_birthday from student where s_sex = '女';
 
 * 33、查询成绩比该课程平均成绩低的同学的成绩表。
 
-
+	  select s_no,s_id,c_id,degree from score,(select avg(degree) as xdegree,c_id as xc_id 
+	  	from score group by c_id ) as xin where score.c_id=xc_id and score.degree<xdegree;
 
 * 34、查询所有任课教师的t_name和Depart.
 
