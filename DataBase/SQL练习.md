@@ -188,14 +188,21 @@
 
      现查询所有同学的s_id、c_id和rank列。
 
+	  select s_id,c_id,rank from score,grade where score.degree between grade.low and grade.upp;
 
 * 19、查询选修“3-105”课程的成绩高于“109”号同学成绩的所有同学的记录。
 
-
+	  select * from student,score where student.s_id = score.s_id and score.c_id = '3-105' 
+	  	and degree > (select degree from score where score.s_id = '109' and score.c_id = '3-105');
 
 * 20、查询score中选学一门以上课程的同学中分数为非最高分成绩的记录。
 
-
+	  select * from score where degree not in (select max(degree) from score group by s_id) 
+	  		and s_id in (select s_id from score group by s_id having count(c_id)>1);
+			
+	  select t1.s_id,t2.c_id,t2.degree from score as t2,(select s_id,max(degree) as maxdegree  
+		  from score group by s_id having count(s_id) > 1 ) as t1 where t1.s_id=t2.s_id 
+		  					and t2.degree < t1.maxdegree; 		
 
 * 22、查询和学号为108的同学同年出生的所有学生的s_id、s_name和s_birthday列。
 	
