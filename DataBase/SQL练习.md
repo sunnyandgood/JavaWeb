@@ -206,11 +206,24 @@
 
 * 22、查询和学号为108的同学同年出生的所有学生的s_id、s_name和s_birthday列。
 	
+	  mysql> select s_id,s_name,s_birthday from student where s_birthday like 
+	  			(select s_birthday from student where s_id = '108');
+		+------+--------+---------------------+
+		| s_id | s_name | s_birthday          |
+		+------+--------+---------------------+
+		| 108  | 曾华   | 1977-09-01 00:00:00 |
+		+------+--------+---------------------+
+		
+	  select s_id,s_name,s_birthday from student where s_birthday like '1977%';
+	  
 
+* 23、查询"张旭"教师任课的学生成绩。
 
-* 23、查询“张旭“教师任课的学生成绩。
-
-
+	  select degree from score where c_id = (select c_id from coures where t_id = 
+	  			(select t_id from teacher where t_name = '张旭'));
+				
+	  select degree from score,coures,teacher where score.c_id = coures.c_id and 
+	  			coures.t_id = teacher.t_id and teacher.t_name = '张旭';
 
 * 24、查询选修某课程的同学人数多于5人的教师姓名。
 	
