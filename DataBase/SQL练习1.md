@@ -143,13 +143,13 @@
 
     select jname from j where jno in (select jno from spj where sno in (select sno from s where city = '上海'))
 
-select distinct jname from spj,s,j where s.sno = spj.sno and j.jno = spj.jno and s.city = '上海'
+    select distinct jname from spj,s,j where s.sno = spj.sno and j.jno = spj.jno and s.city = '上海'
 
 (7) 找出没有使用天津产的零件的工程号码。
 
     select jno from spj where jno not in (select jno from spj where sno in (select sno from s where city = '天津'))
 
-select jno from spj where jno not in (select jno from spj,s where s.sno = spj.sno and s.city ='天津')
+    select jno from spj where jno not in (select jno from spj,s where s.sno = spj.sno and s.city ='天津')
 
 (8) 把全部红色零件的颜色改成蓝色。
 
