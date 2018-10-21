@@ -16,6 +16,7 @@
 ### 三、[JSP](./JSP)
 
 ### 四、[servlet](./servlet)
+* [servlet](./servlet/servlet.md)
 * [servlet套路](./servlet/servlet套路.md)
 
 ### 五、[jstl](./jstl)
