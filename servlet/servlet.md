@@ -15,7 +15,7 @@
         }
       }
 
-* 2、`private static final long serialVersionUID = 1L;`的意思：
+* 2、`private static final long serialVersionUID = 1L;`的作用：
 
       >作用：防止类对象冲突，给类的对象编号。
 
