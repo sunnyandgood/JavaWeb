@@ -16,6 +16,8 @@
 * [c3p0配置详解](./JDBC/c3p0配置详解.md)
 
 ### 四、[JSP](./JSP)
+* [jsp九大内置对象](./JSP/jsp九大内置对象.md)
+* [jsp剖析](./JSP/jsp剖析.md)
 
 ### 五、[servlet](./servlet)
 * [servlet](./servlet/servlet.md)
