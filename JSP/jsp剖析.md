@@ -1,6 +1,6 @@
 # jsp剖析
 
-### 一、1、`http://localhost:8080/jsp/`解析
+### 一、`http://localhost:8080/jsp/`解析
 
 * `http://`：HTTP协议
 
