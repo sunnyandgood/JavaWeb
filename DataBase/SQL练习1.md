@@ -99,72 +99,72 @@ INSERT INTO `spj` VALUES ('s5', 'p6', 'j4', '500');
 select distinct sno from spj where jno = 'j1'
 ```
 （2）求供应工程 J1 零件 P1 的供应商号码 SNO
-
-    select distinct sno from spj where jno = 'j1' and pno = 'p1'
-
+```sql
+select distinct sno from spj where jno = 'j1' and pno = 'p1'
+```
 （3）求供应工程 J1 零件为红色的供应商号码 SNO :
-
-    select distinct sno from spj where jno = 'j1' and pno in (select pno from p where color = '红')
-
+```sql
+select distinct sno from spj where jno = 'j1' and pno in (select pno from p where color = '红')
+```
 （4）求没有使用天津供应商生产的红色零件的工程号 JNO :
-
-    select distinct jno from spj where jno not in (select jno from spj,p,s where s.city = '天津' 
+```sql
+select distinct jno from spj where jno not in (select jno from spj,p,s where s.city = '天津' 
                                       and color = '红' and spj.sno = s.sno and p.pno = spj.pno)
-
+```
 （5）求至少用了供应商 S1 所供应的全部零件的工程号 JNO :
-
-    select distinct pno from spj where sno = 's1'
+```sql
+select distinct pno from spj where sno = 's1'
     
-    select jno from spj where pno = 'p1' and jno in (select jno from spj where pno = 'p2')
-
+select jno from spj where pno = 'p1' and jno in (select jno from spj where pno = 'p2')
+```
 ----------------------------
 
 (1) 找出所有供应商的姓名和所在城市。
-
-    select sname,city from s
-
+```sql
+select sname,city from s
+```
 (2) 找出所有零件的名称、颜色、重量。
-
-    select pname,color,weight from p
-
+```sql
+select pname,color,weight from p
+```
 (3) 找出使用供应商 S1 所供应零件的工程号码。
-
-    select distinct jno from spj where sno = 's1'
-
+```sql
+select distinct jno from spj where sno = 's1'
+```
 (4) 找出工程项目 J2 使用的各种零件的名称及其数量。
-
-    select pname,qty from p,spj where spj.jno = 'j2' and spj.pno = p.pno
-
+```sql
+select pname,qty from p,spj where spj.jno = 'j2' and spj.pno = p.pno
+```
 (5) 找出上海厂商供应的所有零件号码。
-
-    select pno from spj where sno in (select sno from s where city = '上海')
-
+```sql
+select pno from spj where sno in (select sno from s where city = '上海')
+```
 (6) 找出使用上海产的零件的工程名称。
+```sql
+select jname from j where jno in (select jno from spj where sno in (select sno from s where city = '上海'))
 
-    select jname from j where jno in (select jno from spj where sno in (select sno from s where city = '上海'))
-
-    select distinct jname from spj,s,j where s.sno = spj.sno and j.jno = spj.jno and s.city = '上海'
-
+select distinct jname from spj,s,j where s.sno = spj.sno and j.jno = spj.jno and s.city = '上海'
+```
 (7) 找出没有使用天津产的零件的工程号码。
+```sql
+select jno from spj where jno not in (select jno from spj where sno in (select sno from s where city = '天津'))
 
-    select jno from spj where jno not in (select jno from spj where sno in (select sno from s where city = '天津'))
-
-    select jno from spj where jno not in (select jno from spj,s where s.sno = spj.sno and s.city ='天津')
-
+select jno from spj where jno not in (select jno from spj,s where s.sno = spj.sno and s.city ='天津')
+```
 (8) 把全部红色零件的颜色改成蓝色。
-
-    update p set color = '蓝' where color = '红'
-
+```sql
+update p set color = '蓝' where color = '红'
+```
 (9) 由 S5 供给 J4 的零件 P6 改为由 S3 供应。
-
-    update spj set sno = 's3' where sno = 's5' and pno = 'p6' and jno = 'j4'
-
+```sql
+update spj set sno = 's3' where sno = 's5' and pno = 'p6' and jno = 'j4'
+```
 (10) 从供应商关系中删除供应商号是 S2 的记录,并从供应情况关系中删除相应的记录。
-
-    1>delete from s where sno = 's2'
-
-	2>delete from spj where sno = 's2'
-
+```sql
+1>delete from s where sno = 's2'
+2>delete from spj where sno = 's2'
+```
 (11) 请将 (S2 , J6 , P4 , 200) 插入供应情况关系。
-
-    insert into spj (sno,pno,jno,qty) values ('s2','j6','p4',200)
+```sql
+insert into spj (sno,pno,jno,qty) values ('s2','j6','p4',200)
+```
