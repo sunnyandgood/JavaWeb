@@ -46,11 +46,9 @@
   * 转发方式
 		
     * 1>相对路径
-
-
-	      request.getRequestDispatcher("jie.jsp").forward(request,response);
-
-
+    	```java
+	request.getRequestDispatcher("jie.jsp").forward(request,response);
+	```
     * 2>绝对路径
 
           request.getRequestDispatcher("/jsp/request/jie.jsp").forward(request,response);
