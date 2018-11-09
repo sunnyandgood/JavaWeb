@@ -5,20 +5,20 @@
 * 2、创建servlet类：创建类，继承HttpServlet，该类在servlet-api.jar；复写doGet/doPost方法
 
 * 3、配置请求映射
-
-      <servlet>
-        <!--servlet名称，与配置文件中的<servlet-mapping>标签中的servlet-name匹配-->
-        <servlet-name>servlet01</servlet-name>
-        <!--servlet类的全名称，原理：Java反射机制-->
-        <servlet-class>com.wxkj.servlet.action.ServletAction</servlet-class>
-      </servlet>
-      <servlet-mapping>
-        <!--servlet名称，与配置文件中的<servlet>标签中的servlet-name匹配-->
-        <servlet-name>servlet01</servlet-name>
-        <!--响应请求，当浏览器请求到达时，此处首先匹配-->
-        <url-pattern>/form01</url-pattern>
-      </servlet-mapping>
-
+    ```xml
+    <servlet>
+         <!--servlet名称，与配置文件中的<servlet-mapping>标签中的servlet-name匹配-->
+         <servlet-name>servlet01</servlet-name>
+         <!--servlet类的全名称，原理：Java反射机制-->
+         <servlet-class>com.wxkj.servlet.action.ServletAction</servlet-class>
+    </servlet>
+    <servlet-mapping>
+          <!--servlet名称，与配置文件中的<servlet>标签中的servlet-name匹配-->
+          <servlet-name>servlet01</servlet-name>
+          <!--响应请求，当浏览器请求到达时，此处首先匹配-->
+          <url-pattern>/form01</url-pattern>
+    </servlet-mapping>
+    ```
 * 4、表单的method属性决定了servlet类对象呗访问的是doGet还是doPost
     * method属性值为get，则访问doGet
     * method属性值为post，则访问doPost
