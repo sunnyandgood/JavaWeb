@@ -47,13 +47,14 @@
 		
     * 1>相对路径
 
-```jsp
-request.getRequestDispatcher("jie.jsp").forward(request,response);
-```
+
+	      request.getRequestDispatcher("jie.jsp").forward(request,response);
+
 
     * 2>绝对路径
 
           request.getRequestDispatcher("/jsp/request/jie.jsp").forward(request,response);
+ 
       
   * 表示请求转发，使请求转发到指定页面，该行为为服务器行为（一次请求）
   
