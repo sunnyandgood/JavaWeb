@@ -133,11 +133,11 @@
 
 ### 八、中文乱码		
 
-* 隐式提交：使用`request.setCharacterEncoding("utf-8");`可解决
+* 隐式提交（表单提交方式为post）：使用`request.setCharacterEncoding("utf-8");`可解决
 
 * 注意：以上方式中，转码方法必须放在第一行
 
-* 显式提交：`new String(hua.getBytes("utf-8"),"iso8859-1");`终极转码方式
+* 显式提交（表单提交方式为get）：`new String(hua.getBytes("utf-8"),"iso8859-1");`终极转码方式
 
 
 
