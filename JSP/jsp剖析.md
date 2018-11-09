@@ -12,23 +12,24 @@
 
 * `/`：表示要访问的页面的路径，当前为默认路径
     * 默认路径的指定（`web.xml`文件）
-    
-          <?xml version="1.0" encoding="UTF-8"?>
-          <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-                   xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
-                   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
-                                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" 
-                   id="WebApp_ID" version="4.0">
-            <display-name>jsp</display-name>
-            <welcome-file-list>
-              <welcome-file>index.html</welcome-file>
-              <welcome-file>index.htm</welcome-file>
-              <welcome-file>index.jsp</welcome-file>
-              <welcome-file>default.html</welcome-file>
-              <welcome-file>default.htm</welcome-file>
-              <welcome-file>default.jsp</welcome-file>
-            </welcome-file-list>
-          </web-app>    
+```xml    
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+   xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+		       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" 
+   id="WebApp_ID" version="4.0">
+	<display-name>jsp</display-name>
+	<welcome-file-list>
+	<welcome-file>index.html</welcome-file>
+	<welcome-file>index.htm</welcome-file>
+	<welcome-file>index.jsp</welcome-file>
+	<welcome-file>default.html</welcome-file>
+	<welcome-file>default.htm</welcome-file>
+	<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>    
+```
 
 ### 二、`http://localhost:8080/jsp/jsp/myNewJsp.jsp`中`jsp/myNewJsp.jsp`解析
 
@@ -46,7 +47,9 @@
 		
     * 1>相对路径
 
-          request.getRequestDispatcher("jie.jsp").forward(request,response);
+```jsp
+request.getRequestDispatcher("jie.jsp").forward(request,response);
+```
 
     * 2>绝对路径
 
