@@ -49,12 +49,10 @@
        ```java
        request.getRequestDispatcher("jie.jsp").forward(request,response);
        ```
-	
     * 2>绝对路径
-
-          request.getRequestDispatcher("/jsp/request/jie.jsp").forward(request,response);
- 
-      
+       ```java
+       request.getRequestDispatcher("/jsp/request/jie.jsp").forward(request,response);
+       ```
   * 表示请求转发，使请求转发到指定页面，该行为为服务器行为（一次请求）
   
     * `getRequestDispatcher("requestJie.jsp")`指定要去的页面，参数为String类型的路径
@@ -68,13 +66,13 @@
   * 转发方式
 		  
     * 1>相对路径
-			
-          response.sendRedirect("jie.jsp");
-		  
+       ```java	
+       response.sendRedirect("jie.jsp");
+       ```
     * 2>绝对路径
-    
-			response.sendRedirect(request.getContextPath()+"/jsp/jieChuan/jie.jsp");
-			
+       ```java			
+       response.sendRedirect(request.getContextPath()+"/jsp/jieChuan/jie.jsp");
+       ```
         * request.getContextPath()表示获取当前项目在服务器上的路径
       
   * 表示重定向，使请求重新定向到新的请求或页面，还行为为浏览器行为（两次请求）
