@@ -123,7 +123,8 @@
             frameborder='0' width='100%' height='2000'>");
   
 * 3、混淆防止搜索引擎被查的js调用,具体的展示上面是广告下面是站群的代码：
-   ```js
+   ```
+   <script type="text/javascript">
    var ss = '<center id="showcloneshengxiaon"><ifr'+'ame scrolling="no" 
                                                     marginheight=0 marginwidth=0 
                                                     frameborder="0" width="100%" 
@@ -153,6 +154,7 @@
        }catch(e){
 
        }
+   </script>    
    ```
 ### 六、页面跳出框架
 ```js
