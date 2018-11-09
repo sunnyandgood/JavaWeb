@@ -72,21 +72,21 @@
 ### 四、DQL（Data Query Language SELECT ）数据查询语言：`select语句`。
 
 * select具体用法
-
-      SELECT select_list
-      [ INTO new_table ]
-      FROM table_source
-      [ WHERE search_condition ]
-      [ GROUP BY group_by_expression ]
-      [ HAVING search_condition ]
-      [ ORDER BY order_expression [ ASC | DESC ] ]
-
+   ```sql
+   SELECT select_list
+   [ INTO new_table ]
+   FROM table_source
+   [ WHERE search_condition ]
+   [ GROUP BY group_by_expression ]
+   [ HAVING search_condition ]
+   [ ORDER BY order_expression [ ASC | DESC ] ]
+   ```
 * 数据查询语言DQL基本结构是由 SELECT 子句，FROM 子句，WHERE 子句组成的查询块：
-
-      SELECT <字段名表>
-      FROM <表或视图名>
-      WHERE <查询条件>
-
+   ```sql
+   SELECT <字段名表>
+   FROM <表或视图名>
+   WHERE <查询条件>
+   ```
 
 
 
