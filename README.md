@@ -20,6 +20,7 @@
 * [jsp剖析](./JSP/jsp剖析.md)
 * jsp小应用
     * [jsp小应用之单聊](./JSP/jsp小应用之单聊.md)
+    * [jsp小应用之群聊](./JSP/jsp小应用之群聊.md)
 
 ### 五、[servlet](./servlet)
 * [servlet](./servlet/servlet.md)
