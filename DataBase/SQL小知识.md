@@ -1,4 +1,4 @@
-SQL小知识
+<h1 align="center">SQL小知识</h1>
 
 ## sqlserver中将varchar类型转换为int型
 ```sql
