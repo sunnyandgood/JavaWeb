@@ -9,6 +9,7 @@
 * [DDL、DML、DCL、DQL](./DataBase/DDL_DML_DCL_DQL.md)
 * [SQL练习1](./DataBase/SQL练习.md)
 * [SQL练习2](./DataBase/SQL练习1.md)
+* [sqlserver中将varchar类型转换为int型](./DataBase/sqlserver中将varchar类型转换为int型.md)
 
 
 ### 三、[JDBC](./JDBC)
