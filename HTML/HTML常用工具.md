@@ -20,3 +20,19 @@
     ```html
     <input type="text"  readonly  unselectable="on" >
     ```
+### 二、音频播放
+
+* 相对路径：
+   ```html
+   <audio src="./resources/upload/07718b10-d234-4c8c-8137-348b5639db41.mp3" controls="controls">
+      Your browser does not support the audio element.
+   </audio>
+   ```
+
+
+* 绝对路径：
+   ```html
+   <audio src="file:///D:/studyCodes/idea/OnlineMusic/target/com.edu/resources/upload/07718b10-d234-4c8c-8137-348b5639db41.mp3" controls="controls">
+       Your browser does not support the audio element.
+   </audio>
+   ```
