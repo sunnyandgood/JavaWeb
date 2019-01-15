@@ -5,16 +5,16 @@
 
   ```xml
   <servlet>
-    <servlet-name>runtain</servlet-name>
-    <jsp-file>/WEB-INF/INF.jsp</jsp-file>
+      <servlet-name>admin_index_jsp</servlet-name>
+      <jsp-file>/WEB-INF/views/admin/admin_index.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
-    <servlet-name>runtain</servlet-name>
-    <url-pattern>/XXX</url-pattern>
+      <servlet-name>admin_index_jsp</servlet-name>
+      <url-pattern>/admin_index_jsp</url-pattern>
   </servlet-mapping>
   ```
 
-* 访问地址:`http://localhost:8080/runtain/xxx`就可以看见内容了!
+* 访问地址:`http://localhost:8080/xxx`就可以看见内容了!
 
 ### 方法2：`<jsp:forward page ="/WEB-INF/jsp/test/test.jsp" />`
 
