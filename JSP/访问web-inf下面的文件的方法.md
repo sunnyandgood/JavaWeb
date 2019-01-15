@@ -14,7 +14,7 @@
   </servlet-mapping>
   ```
 
-* 访问地址:`http://localhost:8080/xxx`就可以看见内容了!
+* 访问地址:`http://localhost:8080/admin_index_jsp`就可以看见内容了!
 
 ### 方法2：`<jsp:forward page ="/WEB-INF/jsp/test/test.jsp" />`
 
